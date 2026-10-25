@@ -11,7 +11,7 @@ export default function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/data/users.json')
+    fetch(`${import.meta.env.BASE_URL}data/users.json`) // Динамический базовый URL
       .then((response) => {
         if (!response.ok) throw new Error('Ошибка загрузки списка');
         return response.json();

@@ -24,7 +24,7 @@ export default function Details({ info }) {
   useEffect(() => {
     const abortController = new AbortController();
 
-    fetch(`/data/${info.id}.json`, { signal: abortController.signal })
+    fetch(`${import.meta.env.BASE_URL}data/${info.id}.json`, { signal: abortController.signal })
       .then((response) => {
         if (!response.ok) throw new Error('Не удалось загрузить данные пользователя');
         return response.json();
